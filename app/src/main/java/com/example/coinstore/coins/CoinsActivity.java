@@ -37,6 +37,7 @@ public class CoinsActivity extends AppCompatActivity {
     private void setupAdapter() {
         coinsAdapter = new CoinsAdapter();
         coinsAdapter.setCoins(coins);
+        coinsAdapter.setActive(true);
     }
 
     private void setupCoinsRv() {
@@ -51,8 +52,7 @@ public class CoinsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Coin>> call, Response<List<Coin>> response) {
                 Toast.makeText(CoinsActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                coins = response.body();
-                coinsAdapter.setCoins(coins);
+                coinsAdapter.setCoins(response.body());
             }
 
             @Override

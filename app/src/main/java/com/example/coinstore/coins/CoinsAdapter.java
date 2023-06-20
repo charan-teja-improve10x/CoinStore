@@ -17,6 +17,10 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinViewHolder> {
 
     private Boolean isActive = false;
 
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
+
     public void setCoins(List<Coin> coins) {
         this.coins = coins;
         notifyDataSetChanged();
@@ -34,7 +38,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinViewHolder> {
     public void onBindViewHolder(@NonNull CoinViewHolder holder, int position) {
         Coin coin = coins.get(position);
         holder.binding.setCoin(coin);
-        holder.binding.setIsActive(true);
+        holder.binding.setIsActive(isActive);
     }
 
     @Override
