@@ -19,6 +19,10 @@ public class TagsAdapter extends RecyclerView.Adapter<TagViewHolder> {
         this.tags = tags;
     }
 
+    void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     @NonNull
     @Override
     public TagViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
