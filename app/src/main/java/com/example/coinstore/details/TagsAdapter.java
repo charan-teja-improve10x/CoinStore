@@ -17,10 +17,12 @@ public class TagsAdapter extends RecyclerView.Adapter<TagViewHolder> {
 
     public TagsAdapter(List<Tag> tags) {
         this.tags = tags;
+        notifyDataSetChanged();
     }
 
     void setTags(List<Tag> tags) {
         this.tags = tags;
+        notifyDataSetChanged();
     }
 
     @NonNull

@@ -26,7 +26,7 @@ public class CoinDetailsActivity extends AppCompatActivity {
     private ActivityCoinDetailsBinding binding;
     private TeamsAdapter teamsAdapter;
     private TagsAdapter tagsAdapter;
-    private String id;
+    private String id ;
     private List<Team> teams = new ArrayList<>();
     private List<Tag> tags = new ArrayList<>();
 
@@ -36,7 +36,7 @@ public class CoinDetailsActivity extends AppCompatActivity {
         binding = ActivityCoinDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         reviveData();
-        fetchCoinDetails();
+        fetchCoinDetails(id);
         setupAdapter();
         setupRecyclerView();
     }
@@ -58,15 +58,16 @@ public class CoinDetailsActivity extends AppCompatActivity {
         binding.tagsRv.setAdapter(tagsAdapter);
     }
 
-    private void fetchCoinDetails() {
+    private void fetchCoinDetails(String id) {
         CoinApiService coinApiService = new CoinApi().createCoinApiService();
         Call<Coin> call = coinApiService.fetchCoinDetails(id);
         call.enqueue(new Callback<Coin>() {
             @Override
             public void onResponse(Call<Coin> call, Response<Coin> response) {
                 Toast.makeText(CoinDetailsActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                tagsAdapter.setTags(response.body().getTags());
                 teamsAdapter.setTeams(response.body().getTeams());
+                tagsAdapter.setTags(response.body().getTags());
+                binding.setCoin(response.body());
             }
 
             @Override
