@@ -3,10 +3,12 @@ package com.example.coinstore.coins;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.coinstore.databinding.ActivityCoinsBinding;
+import com.example.coinstore.details.CoinDetailsActivity;
 import com.example.coinstore.model.Coin;
 import com.example.coinstore.network.CoinApi;
 import com.example.coinstore.network.CoinApiService;
@@ -37,6 +39,12 @@ public class CoinsActivity extends AppCompatActivity {
         coinsAdapter = new CoinsAdapter();
         coinsAdapter.setCoins(coins);
         coinsAdapter.setActive(true);
+        coinsAdapter.setListener(new OnItemClickListener() {
+            @Override
+            public void onItemClicked(String id) {
+                onNavigate(id);
+            }
+        });
     }
 
     private void setupCoinsRv() {
@@ -59,5 +67,11 @@ public class CoinsActivity extends AppCompatActivity {
                 Toast.makeText(CoinsActivity.this, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void onNavigate(String id) {
+        Intent intent = new Intent(this, CoinDetailsActivity.class);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 }

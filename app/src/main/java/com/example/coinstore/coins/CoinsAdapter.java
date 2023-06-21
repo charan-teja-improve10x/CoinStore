@@ -17,6 +17,13 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinViewHolder> {
 
     private Boolean isActive = false;
 
+    public void setListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    private OnItemClickListener listener;
+
+
     public void setActive(Boolean active) {
         isActive = active;
     }
@@ -39,6 +46,9 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinViewHolder> {
         Coin coin = coins.get(position);
         holder.binding.setCoin(coin);
         holder.binding.setIsActive(isActive);
+        holder.binding.nameTxt.setOnClickListener(v -> {
+            listener.onItemClicked(coin.getId());
+        });
     }
 
     @Override
