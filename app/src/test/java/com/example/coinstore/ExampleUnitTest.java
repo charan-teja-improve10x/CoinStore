@@ -5,8 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import com.example.coinstore.model.Coin;
-import com.example.coinstore.model.network.CoinApi;
-import com.example.coinstore.model.network.CoinApiService;
+import com.example.coinstore.network.CoinApi;
+import com.example.coinstore.network.CoinApiService;
 import com.google.gson.Gson;
 
 import java.io.IOException;

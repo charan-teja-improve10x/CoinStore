@@ -6,11 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.coinstore.R;
 import com.example.coinstore.databinding.ActivityCoinsBinding;
 import com.example.coinstore.model.Coin;
-import com.example.coinstore.model.network.CoinApi;
-import com.example.coinstore.model.network.CoinApiService;
+import com.example.coinstore.network.CoinApi;
+import com.example.coinstore.network.CoinApiService;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.coinstore.model.network;
+package com.example.coinstore.network;
 
 import com.example.coinstore.Constants;
 import com.example.coinstore.model.Coin;
