@@ -10,47 +10,61 @@
             name="isActive"
             type="Boolean" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/rank_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:text="@{String.valueOf(coin.rank) + `. `}"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="TextView" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/name_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@{coin.name + ` (` + coin.symbol + `)`}"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rank_txt"
-        app:layout_constraintStart_toEndOf="@+id/rank_txt"
-        app:layout_constraintTop_toTopOf="@+id/rank_txt"
-        tools:text="TextView" />
+        <TextView
+            android:id="@+id/rank_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="@{String.valueOf(coin.rank) + `. `}"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/is_active_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:text="@{String.valueOf(isActive ? `active` : `inActive`)}"
-        android:textColor="#25E51E"
-        android:textSize="16dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="@+id/rank_txt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rank_txt"
-        tools:text="TextView" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="start|right"
+            android:maxLines="1"
+            android:text="@{coin.name + ` (` + coin.symbol + `)`}"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rank_txt"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toEndOf="@+id/rank_txt"
+            app:layout_constraintTop_toTopOf="@+id/rank_txt"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/is_active_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:gravity="right"
+            android:text="@{String.valueOf(isActive ? `active` : `inActive`)}"
+            android:textColor="#25E51E"
+            android:textSize="16dp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/rank_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rank_txt"
+            tools:text="TextView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="317dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
