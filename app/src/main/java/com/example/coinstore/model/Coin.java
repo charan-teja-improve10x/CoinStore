@@ -34,7 +34,8 @@ public class Coin {
     private String orgStructure;
     @SerializedName("hash_algorithm")
     private String hashAlgorithm;
-    private List<Link> links;
+    @SerializedName("links")
+    private Link link;
     @SerializedName("links_extended")
     private List<LinkExtended> linkExtendeds;
     @SerializedName("whitepaper")
@@ -196,12 +197,12 @@ public class Coin {
         this.hashAlgorithm = hashAlgorithm;
     }
 
-    public List<Link> getLinks() {
-        return links;
+    public Link getLink() {
+        return link;
     }
 
-    public void setLinks(List<Link> links) {
-        this.links = links;
+    public void setLink(Link link) {
+        this.link = link;
     }
 
     public List<LinkExtended> getLinkExtendeds() {

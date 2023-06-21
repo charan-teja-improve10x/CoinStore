@@ -34,4 +34,13 @@ public class ExampleUnitTest {
         assertFalse(coins.isEmpty());
         System.out.println(new Gson().toJson(coins));
     }
+
+    @Test
+    public void getCoinDetails() throws IOException {
+        CoinApiService coinApiService = new CoinApi().createCoinApiService();
+        Call<Coin> call = coinApiService.fetchCoinDetails("eth-ethereum");
+        Coin coin = call.execute().body();
+        assertNotNull(coin);
+        System.out.println(new Gson().toJson(coin));
+    }
 }
