@@ -16,73 +16,26 @@ public class Coin {
     private String type;
     private String logo;
     private List<Tag> tags;
-    /*{
-
-    "team": [
-        {
-            "id": "satoshi-nakamoto",
-            "name": "Satoshi Nakamoto",
-            "position": "Founder"
-        },
-        {
-            "id": "wladimir-j-van-der-laan",
-            "name": "Wladimir J. van der Laan",
-            "position": "Blockchain Developer"
-        },
-        {
-            "id": "jonas-schnelli",
-            "name": "Jonas Schnelli",
-            "position": "Blockchain Developer"
-        },
-        {
-            "id": "marco-falke",
-            "name": "Marco Falke",
-            "position": "Blockchain Developer"
-        },
-        {
-            "id": "rahul",
-            "name": "Rahul",
-            "position": "Node js Developer"
-        },
-        {
-            "id": "ashutosh",
-            "name": "Ashutosh",
-            "position": "Whale Miner"
-        }
-    ],
-    "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.",
-    "message": "",
-    "open_source": true,
-    "started_at": "2009-01-03T00:00:00Z",
-    "development_status": "Working product",
-    "hardware_wallet": true,
-    "proof_type": "Proof of Work",
-    "org_structure": "Decentralized",
-    "hash_algorithm": "SHA256",
-    "links": {
-        "explorer": [
-            "https://blockchair.com/bitcoin/?from=coinpaprika",
-            "https://blockchain.com/explorer",
-            "https://blockstream.info/",
-            "https://live.blockcypher.com/btc/",
-            "https://btc.cryptoid.info/btc/"
-        ],
-        "facebook": [
-            "https://www.facebook.com/bitcoins/"
-        ],
-        "reddit": [
-            "https://www.reddit.com/r/bitcoin"
-        ],
-        "source_code": [
-            "https://github.com/bitcoin/bitcoin"
-        ],
-        "website": [
-            "https://bitcoin.org/"
-        ],
-        "youtube": [
-            "https://www.youtube.com/watch?v=Gc2en3nHxA4&"
-        ]
-    },
+    @SerializedName("team")
+    private List<Team> teams;
+    private String description;
+    private String message;
+    @SerializedName("open_source")
+    private Boolean openSource;
+    @SerializedName("started_at")
+    private String startedAt;
+    @SerializedName("development_status")
+    private String developmentStatus;
+    @SerializedName("hardware_wallet")
+    private Boolean hardwareWallet;
+    @SerializedName("proof_type")
+    private String proofType;
+    @SerializedName("org_structure")
+    private String orgStructure;
+    @SerializedName("hash_algorithm")
+    private String hashAlgorithm;
+    private List<Link> links;
+    /*
     "links_extended": [
         {
             "url": "https://bitcoin.org/en/blog",
