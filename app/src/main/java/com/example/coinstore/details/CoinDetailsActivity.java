@@ -10,6 +10,7 @@ import com.example.coinstore.databinding.ActivityCoinDetailsBinding;
 import com.example.coinstore.model.Tag;
 import com.example.coinstore.model.Team;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CoinDetailsActivity extends AppCompatActivity {
@@ -17,8 +18,8 @@ public class CoinDetailsActivity extends AppCompatActivity {
     private ActivityCoinDetailsBinding binding;
     private TeamsAdapter teamsAdapter;
     private TagsAdapter tagsAdapter;
-    private List<Team> teams;
-    private List<Tag> tags;
+    private List<Team> teams = new ArrayList<>();
+    private List<Tag> tags = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
