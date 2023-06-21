@@ -35,82 +35,15 @@ public class Coin {
     @SerializedName("hash_algorithm")
     private String hashAlgorithm;
     private List<Link> links;
-    /*
-    "links_extended": [
-        {
-            "url": "https://bitcoin.org/en/blog",
-            "type": "blog"
-        },
-        {
-            "url": "https://blockchair.com/bitcoin/?from=coinpaprika",
-            "type": "explorer"
-        },
-        {
-            "url": "https://blockchain.com/explorer",
-            "type": "explorer"
-        },
-        {
-            "url": "https://blockstream.info/",
-            "type": "explorer"
-        },
-        {
-            "url": "https://live.blockcypher.com/btc/",
-            "type": "explorer"
-        },
-        {
-            "url": "https://btc.cryptoid.info/btc/",
-            "type": "explorer"
-        },
-        {
-            "url": "https://www.facebook.com/bitcoins/",
-            "type": "facebook"
-        },
-        {
-            "url": "https://bitcointalk.org",
-            "type": "message_board"
-        },
-        {
-            "url": "https://www.reddit.com/r/bitcoin",
-            "type": "reddit",
-            "stats": {
-                "subscribers": 5604728
-            }
-        },
-        {
-            "url": "https://github.com/bitcoin/bitcoin",
-            "type": "source_code",
-            "stats": {
-                "contributors": 1141,
-                "stars": 70021
-            }
-        },
-        {
-            "url": "https://twitter.com/bitcoincoreorg",
-            "type": "twitter",
-            "stats": {
-                "followers": 161310
-            }
-        },
-        {
-            "url": "https://electrum.org/#download",
-            "type": "wallet"
-        },
-        {
-            "url": "https://bitcoin.org/",
-            "type": "website"
-        },
-        {
-            "url": "https://www.youtube.com/watch?v=Gc2en3nHxA4&",
-            "type": "youtube"
-        }
-    ],
-    "whitepaper": {
-        "link": "https://static.coinpaprika.com/storage/cdn/whitepapers/215.pdf",
-        "thumbnail": "https://static.coinpaprika.com/storage/cdn/whitepapers/217.jpg"
-    },
-    "first_data_at": "2010-07-17T00:00:00Z",
-    "last_data_at": "2023-06-21T05:22:00Z"
-}*/
+    @SerializedName("links_extended")
+    private List<LinkExtended> linkExtendeds;
+    @SerializedName("whitepaper")
+    private WhitePaper whitePaper;
+    @SerializedName("first_data_at")
+    private String firstDataAt;
+    @SerializedName("last_data_at")
+    private String lastDataAt;
+
     public String getId() {
         return id;
     }
@@ -165,6 +98,142 @@ public class Coin {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+    public List<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Boolean getOpenSource() {
+        return openSource;
+    }
+
+    public void setOpenSource(Boolean openSource) {
+        this.openSource = openSource;
+    }
+
+    public String getStartedAt() {
+        return startedAt;
+    }
+
+    public void setStartedAt(String startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    public String getDevelopmentStatus() {
+        return developmentStatus;
+    }
+
+    public void setDevelopmentStatus(String developmentStatus) {
+        this.developmentStatus = developmentStatus;
+    }
+
+    public Boolean getHardwareWallet() {
+        return hardwareWallet;
+    }
+
+    public void setHardwareWallet(Boolean hardwareWallet) {
+        this.hardwareWallet = hardwareWallet;
+    }
+
+    public String getProofType() {
+        return proofType;
+    }
+
+    public void setProofType(String proofType) {
+        this.proofType = proofType;
+    }
+
+    public String getOrgStructure() {
+        return orgStructure;
+    }
+
+    public void setOrgStructure(String orgStructure) {
+        this.orgStructure = orgStructure;
+    }
+
+    public String getHashAlgorithm() {
+        return hashAlgorithm;
+    }
+
+    public void setHashAlgorithm(String hashAlgorithm) {
+        this.hashAlgorithm = hashAlgorithm;
+    }
+
+    public List<Link> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<Link> links) {
+        this.links = links;
+    }
+
+    public List<LinkExtended> getLinkExtendeds() {
+        return linkExtendeds;
+    }
+
+    public void setLinkExtendeds(List<LinkExtended> linkExtendeds) {
+        this.linkExtendeds = linkExtendeds;
+    }
+
+    public WhitePaper getWhitePaper() {
+        return whitePaper;
+    }
+
+    public void setWhitePaper(WhitePaper whitePaper) {
+        this.whitePaper = whitePaper;
+    }
+
+    public String getFirstDataAt() {
+        return firstDataAt;
+    }
+
+    public void setFirstDataAt(String firstDataAt) {
+        this.firstDataAt = firstDataAt;
+    }
+
+    public String getLastDataAt() {
+        return lastDataAt;
+    }
+
+    public void setLastDataAt(String lastDataAt) {
+        this.lastDataAt = lastDataAt;
     }
 }
 
