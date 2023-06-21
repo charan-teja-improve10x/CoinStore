@@ -44,6 +44,7 @@ public class CoinDetailsActivity extends AppCompatActivity {
     private void reviveData() {
         if (getIntent().hasExtra("id")) {
            id =  getIntent().getStringExtra("id");
+           binding.setIsActive(true);
         }
     }
     private void setupAdapter() {
