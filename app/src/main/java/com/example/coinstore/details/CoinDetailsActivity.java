@@ -8,6 +8,8 @@ import com.example.coinstore.R;
 
 public class CoinDetailsActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
